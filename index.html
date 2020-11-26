@@ -22,25 +22,116 @@
         border-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cstyle%3Epath%7Banimation:stroke 5s infinite linear%3B%7D%40keyframes stroke%7Bto%7Bstroke-dashoffset:776%3B%7D%7D%3C/style%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%232d3561' /%3E%3Cstop offset='25%25' stop-color='%23c05c7e' /%3E%3Cstop offset='50%25' stop-color='%23f3826f' /%3E%3Cstop offset='100%25' stop-color='%23ffb961' /%3E%3C/linearGradient%3E %3Cpath d='M1.5 1.5 l97 0l0 97l-97 0 l0 -97' stroke-linecap='square' stroke='url(%23g)' stroke-width='3' stroke-dasharray='388'/%3E %3C/svg%3E") 1;
       }
 
-      .list-group-item {
-        background-color: rgba(0,0,0,0);
-        border: 0px;
-        padding: 1.2em 0;
-         width: 2em;
+      .row {
+        width: 100%;
       }
 
-      .col-lg-1 {
+      .col-lg-3 {
+        padding-left: 2em;
+        margin-top: 5%;
+      }
+
+      .col-lg-3 img {
+        width: 100%;
+      }
+
+      #social-sidebar a {
+        /*background-color: blue;*/
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        height: 3em;
+        width: 3em;  
+        font-size: 24px;
+        line-height: 2em;
+        position: relative;
+        text-align: center;
+        cursor: pointer;
+        padding-top: 0.3em;
+      }
+
+      #social-sidebar li {
+        /*padding-bottom: 0.7em;*/
+      }
+
+      #social-sidebar {
+        right: 0%;
+        position: fixed;
+        margin-top: 5.5%;
+        list-style: none;
+        margin-right: 0;
         padding-right: 0;
-        padding-left: 0;
-        margin-top: 5.1em;
-        right: 0;
-
       }
 
-      .col-lg-4, .col-lg-3, .col-lg-8 {
-        padding-right: 0;
-        padding-left: 0;
+      #social-sidebar span {
+        opacity: 0;
       }
+
+      #social-sidebar .active {
+        background-color: rgb(4, 54, 69);
+        padding-top: 0.3em;
+      }
+
+      #social-sidebar li:not(:first-child) a:hover {
+        background-color: rgba(4, 54, 69,0.6);
+      }
+
+      #social-sidebar a:hover span {
+      /*right: 120%;*/
+      /*opacity: 1;*/
+    }
+
+   /* #social-sidebar a span {
+      font: 12px "Open Sans", sans-serif;
+      text-transform: uppercase;
+      border-radius: 3px;
+      line-height: 24px;
+      right: -100%;
+      margin-top: -20%;
+      opacity: 0;
+      padding: 4px 8px;
+      position: absolute;
+      transition: opacity .3s, right .4s;
+      top: 50%;
+      z-index: -1;
+    }
+
+    #social-sidebar li:nth-child(4) a span, #social-sidebar li:nth-child(5) a span {
+      width: 8em;
+    }
+
+    #social-sidebar a span:before {
+      content: "";
+      display: block;
+      height: 8px;
+      width: 8px;
+      right: -4px;
+      margin-top: -4px;
+      position: absolute;
+      top: 50%;
+      transform: rotate(45deg);
+    }*/
+
+    /*#social-sidebar a[class*="active"]:hover,*/
+    /*#social-sidebar a[class*="active"] span,
+    #social-sidebar a[class*="active"] span:before {background: rgba(4, 54, 69,0.6);}
+
+    #social-sidebar a[class*="menu"]:hover,
+    #social-sidebar a[class*="menu"] span,
+    #social-sidebar a[class*="menu"] span:before {background: rgba(4, 54, 69,0.6);}
+
+    #social-sidebar a[class*="gallery"]:hover,
+    #social-sidebar a[class*="gallery"] span,
+    #social-sidebar a[class*="gallery"] span:before {background: rgba(4, 54, 69,0.6);}
+
+    #social-sidebar a[class*="about"]:hover,
+    #social-sidebar a[class*="about"] span,
+    #social-sidebar a[class*="about"] span:before {background: rgba(4, 54, 69,0.6);}
+
+    #social-sidebar a[class*="contact"]:hover,
+    #social-sidebar a[class*="contact"] span,
+    #social-sidebar a[class*="contact"] span:before {background: rgba(4, 54, 69,0.6);}*/
+
     </style>
 
 </head>
@@ -50,7 +141,7 @@
         <div class="home vertical-center">
         <div class="row">
             <div class="col-lg-3">
-                <img src="images/logotrans.png" style="width: 100%;" alt="">
+                <img src="images/logotrans.png" alt="logo">
                 <h1 style="color: antiquewhite;">100% Pureklsnfla</h1>
             </div>
             <div class="col-lg-8">
@@ -83,13 +174,25 @@
                   </div>
                 </div>
             </div>
-            <div class="col-lg-1">
-                    <a href="#" class="list-group-item active"><img src="icons/home.png"></a>
-                    <a href="#" class="list-group-item"><img src="icons/menu.png"></a>
-                    <a href="#" class="list-group-item"><img src="icons/gallery.png"></a>
-                    <a href="#" class="list-group-item"><img src="icons/about.png"></a>
-                    <a href="#" class="list-group-item"><img src="icons/contact.png"></a>
-            </div>
+      
+
+             <ul id="social-sidebar">
+              <li>
+                <a class="active" href=""><img src="icons/home.png"><span>Home</span></a>
+              </li>
+              <li>
+                <a href="" class="menu"><img src="icons/menu.png"><span>Menu</span></a>
+              </li>
+              <li>
+                <a href="" class="gallery"><img src="icons/gallery.png"><span>Gallery</span></a>
+              </li>
+              <li>
+                <a href="" class="about"><img src="icons/about.png"><span>About Us</span></a>
+              </li>
+              <li>
+                <a href="" class="contact"><img src="icons/contact.png"><span>Contact Us</span></a>
+              </li>
+            </ul>
             
         </div>
     </div>
