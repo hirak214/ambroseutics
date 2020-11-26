@@ -3,11 +3,12 @@ body {
 }
 
 a {
-    font-size: 1.3rem;
-    font-weight: 700;
+    font-size: 1.1em;
+    font-weight: 350;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    letter-spacing: 0.15ch;
     color: #fcf2ca !important;
+    
 }
 
 .nav-link {
