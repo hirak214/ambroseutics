@@ -9,22 +9,23 @@
         <link rel="stylesheet" href="css/menuStyle.css">
 
         <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <style type="text/css">
       body, html {
-      background-image: url("http://localhost:8080/rexBooks/images/mainwall.png");
-       background-color: #ebecf0;
+      /*background-image: url("images/mainwall.png");*/
+      background-color: #ebecf0;
     
     }
      body, p, input, select, textarea, button {
        font-family: 'Montserrat', sans-serif;
        letter-spacing: -0.2px;
-       /*font-size: 16px;*/
     }
      div, p {
        color: #babecc;
-       /*text-shadow: 1px 1px 1px #fff;*/
     }
      form {
        padding: 16px;
@@ -122,47 +123,11 @@
     .navbar {
         background-color: #135467;
         font-family: sans-serif;
+        width: 100%;
     }
 
-    ul { 
-      padding: 0; 
-      list-style: none; 
-      display: table;
-      text-align: center;
-    }
-
-    li { 
-      display: table-cell; 
-      position: relative; 
-      /*padding: 15px 0;*/
-    }
-
-    ul.navbar-nav li a {
-        color: #fff;
-        text-transform: uppercase;
-        text-decoration: none;
-        letter-spacing: 0.15em;
-        display: inline-block;
-        padding: 15px 20px;
-        position: relative;
-    }
-
-    ul.navbar-nav li a:after {    
-      background: none repeat scroll 0 0 transparent;
-      bottom: 0;
-      content: "";
-      display: block;
-      height: 2px;
-      left: 50%;
-      position: absolute;
-      background: #fff;
-      transition: width 0.3s ease 0s, left 0.3s ease 0s;
-      width: 0;
-    }
-
-    ul.navbar-nav li a:hover:after { 
-      width: 100%; 
-      left: 0; 
+    .row {
+      width: 100%;
     }
 
     .navbar-dark {
@@ -191,7 +156,7 @@
       display: none;
     }
 
-    @media screen and (max-width: 1025px) {
+    @media screen and (max-width: 992px) {
       #three {
         display: block;
       }
@@ -226,6 +191,8 @@
 
     #imgme {
       max-height: 4em;
+      padding-left: 3em;
+      /*padding-right: 32em;*/
     }
 
     .sidenav a {
@@ -234,6 +201,56 @@
 
     span#three img {
       height: 1.15em;
+    }
+
+    .topnav a {
+      float: left;
+      text-align: center;
+      color: wheat;
+      text-transform: uppercase;
+      text-decoration: none;
+      letter-spacing: 0.12em;
+      padding-right: 1.7em;
+      position: relative;
+    }
+
+    .topnav a:nth-child(5) {
+      padding-right: 0;
+    }
+
+    .navright {
+      float: right;
+    }
+
+    .navright a:after {    
+      background: none repeat scroll 0 0 transparent;
+      bottom: 0;
+      content: "";
+      display: block;
+      height: 1.3px;
+      left: 50%;
+      position: absolute;
+      background: wheat;
+      transition: width 0.3s ease 0s, left 0.3s ease 0s;
+      width: 0;
+    }
+
+    #activenav:after {
+      background: none repeat scroll 0 0 transparent;
+      bottom: 0;
+      content: "";
+      display: block;
+      height: 1.3px;
+      left: 0;
+      position: absolute;
+      background: wheat;
+      transition: width 0.3s ease 0s, left 0.3s ease 0s;
+      width: 100%;
+    }
+
+    .navright a:hover:after { 
+      width: 100%; 
+      left: 0; 
     }
 
     </style>
@@ -260,15 +277,25 @@
 
                 <a href="index.html" id="logoa"><img id="imgme" src="logos/short_logo_trans.png" alt="Ambroseutics logo"></a>
                 <!-- Navbar Collapse -->
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav mx-auto">
-                        <li> <a class="nav-link" href="index.html" data-target="#">Home</a> </li>
-                        <li> <a class="nav-link" href="buzzers.html">Menu</a> </li>
-                        <li> <a class="nav-link" href="sirens.html">gallery</a> </li>
-                        <li> <a class="nav-link" href="connectors.html">about us</a> </li>
-                        <li> <a class="nav-link" href="transformers.html">contact us</a> </li>
+                <!-- <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul style="float: right !important;">
+                        <li> <a href="index.html" data-target="#">Home</a> </li>
+                        <li class="two"> <a href="buzzers.html">Menu</a> </li>
+                        <li class="three"> <a href="sirens.html">gallery</a> </li>
+                        <li class="four"> <a href="connectors.html">about us</a> </li>
+                        <li> <a id="activenav" href="transformers.html">contact us</a> </li>
                     </ul>
+                </div> -->
+
+                <div class="topnav">
+                <ul class="navright">
+                  <a href="index.html" data-target="#">Home</a> 
+                  <a href="buzzers.html">Menu</a> 
+                  <a href="sirens.html">gallery</a> 
+                  <a href="connectors.html">about us</a> 
+                  <a id="activenav" href="transformers.html">contact us</a>
                 </div>
+              </div>
             </div>
       </nav>
 
