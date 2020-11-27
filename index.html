@@ -76,58 +76,61 @@
         background-color: rgba(4, 54, 69,0.6);
       }
 
+      #social-sidebar a:hover span {
+        right: 120%;
+        opacity: 1;
+      }
 
+      #social-sidebar a span {
+        font: 12px "Open Sans", sans-serif;
+        text-transform: uppercase;
+        border-radius: 3px;
+        line-height: 24px;
+        right: 10%;
+        margin-top: -20%;
+        opacity: 0;
+        padding: 4px 8px;
+        position: absolute;
+        transition: opacity .3s, right .4s;
+        top: 50%;
+        z-index: -1;
+      }
 
-    #social-sidebar a span {
-      font: 12px "Open Sans", sans-serif;
-      text-transform: uppercase;
-      border-radius: 3px;
-      line-height: 24px;
-      right: 10%;
-      margin-top: -20%;
-      opacity: 0;
-      padding: 4px 8px;
-      position: absolute;
-      transition: opacity .3s, right .4s;
-      top: 50%;
-      z-index: -1;
-    }
+      #social-sidebar li:nth-child(4) a span, #social-sidebar li:nth-child(5) a span {
+        width: 8em;
+      }
 
-    #social-sidebar li:nth-child(4) a span, #social-sidebar li:nth-child(5) a span {
-      width: 8em;
-    }
+      #social-sidebar a span:before {
+        content: "";
+        display: block;
+        height: 8px;
+        width: 8px;
+        right: -4px;
+        margin-top: -4px;
+        position: absolute;
+        top: 50%;
+        transform: rotate(45deg);
+      }
 
-    #social-sidebar a span:before {
-      content: "";
-      display: block;
-      height: 8px;
-      width: 8px;
-      right: -4px;
-      margin-top: -4px;
-      position: absolute;
-      top: 50%;
-      transform: rotate(45deg);
-    }
+      /*#social-sidebar a[class*="active"]:hover,*/
+      #social-sidebar a[class*="active"] span,
+      #social-sidebar a[class*="active"] span:before {background: rgba(4, 54, 69,0.6);}
 
-    /*#social-sidebar a[class*="active"]:hover,*/
+      #social-sidebar a[class*="menu"]:hover,
+      #social-sidebar a[class*="menu"] span,
+      #social-sidebar a[class*="menu"] span:before {background: rgba(4, 54, 69,0.6);}
 
-    #social-sidebar a[class*="active"] span:before {background: rgba(4, 54, 69,0.6);}
+      #social-sidebar a[class*="gallery"]:hover,
+      #social-sidebar a[class*="gallery"] span,
+      #social-sidebar a[class*="gallery"] span:before {background: rgba(4, 54, 69,0.6);}
 
-    #social-sidebar a[class*="menu"]:hover,
-    #social-sidebar a[class*="menu"] span,
-    #social-sidebar a[class*="menu"] span:before {background: rgba(4, 54, 69,0.6);}
+      #social-sidebar a[class*="about"]:hover,
+      #social-sidebar a[class*="about"] span,
+      #social-sidebar a[class*="about"] span:before {background: rgba(4, 54, 69,0.6);}
 
-    #social-sidebar a[class*="gallery"]:hover,
-    #social-sidebar a[class*="gallery"] span,
-    #social-sidebar a[class*="gallery"] span:before {background: rgba(4, 54, 69,0.6);}
-
-    #social-sidebar a[class*="about"]:hover,
-    #social-sidebar a[class*="about"] span,
-    #social-sidebar a[class*="about"] span:before {background: rgba(4, 54, 69,0.6);}
-
-    #social-sidebar a[class*="contact"]:hover,
-    #social-sidebar a[class*="contact"] span,
-    #social-sidebar a[class*="contact"] span:before {background: rgba(4, 54, 69,0.6);}
+      #social-sidebar a[class*="contact"]:hover,
+      #social-sidebar a[class*="contact"] span,
+      #social-sidebar a[class*="contact"] span:before {background: rgba(4, 54, 69,0.6);}
 
     </style>
 
